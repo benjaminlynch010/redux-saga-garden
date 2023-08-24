@@ -10,12 +10,13 @@ function PlantList() {
     useEffect(() => {
         console.log('component did mount');
         // dispatch an action to request the plantList from the API
+        dispatch({ type: 'GET_PLANTS' })
     }, []); 
-
+    console.log(reduxState)
     return (
         <div>
             <h3>This is the plant list</h3>
-            <pre>{JSON.stringify(reduxState)}</pre>
+            <pre>{JSON.stringify(reduxState.plantData)}</pre>
         </div>
     );
 }
